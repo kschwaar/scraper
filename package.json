@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "prebuild": "yarn validate",
+    "build": "rollup --config",
+    "lint": "eslint",
+    "format": "prettier --write src __test__",
+    "prepare": "husky install",
+    "validate": "tsc --noEmit && yarn format && yarn lint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "3.212.0",
+    "@aws-sdk/lib-dynamodb": "3.212.0",
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "16.0.3",
+    "follow-redirects": "^1.15.2",
+    "mongoose": "6.7.2",
+    "node-fetch": "^3.2.10",
+    "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.0.3",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "aws-sdk": "^2.1228.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.2",
+    "lint-staged": "^13.0.3",
+    "mockgoose": "^8.0.4",
+    "prettier": "^2.7.1",
+    "rollup": "^2.76.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-zip": "^1.0.3",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "name": "newsroom-scraper"
+}
